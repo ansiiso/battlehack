@@ -12,6 +12,11 @@ angular.module('app', [])
       templateUrl: '/javascripts/tmpl/home.html',
       controller : 'homeCtrl',
 
+    }).when('/', {
+
+      templateUrl: '/javascripts/tmpl/home.html',
+      controller : 'homeCtrl',
+
     }).when('/404', {
       templateUrl: '/javascripts/tmpl/404.html',
       controller : 'missingPageCtrl',
