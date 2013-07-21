@@ -1,6 +1,6 @@
 {
   "name": "VA-EASY",
-  "version": "0.0.1-2",
+  "version": "0.0.1-3",
   "private": true,
   "scripts": {
     "start": "node app.js"
@@ -18,9 +18,9 @@
   },
   "subdomain": "onetroop",
   "domains": [
-  	"onetroop.com",
-	"www.onetroop.com"
-	],
+    "onetroop.com",
+    "www.onetroop.com"
+  ],
   "engines": {
     "node": "0.8.x"
   }

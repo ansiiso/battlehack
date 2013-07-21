@@ -43,7 +43,7 @@
     width: 50%;
     height: 50%;
 "></div>
-        <div class="span2">
+        <div class="span3">
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
             <input type="hidden" name="cmd" value="_donations">
             <input type="hidden" name="business" value="jian.he@live.com">
@@ -56,6 +56,16 @@
             <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
             </form>
         </div>
+        <div class="span3">
+	  <div class="input-append">
+	    <form ng-controller="PostController" ng-submit="postSubscriber()">
+		<div id="subscriberEmail"class="control-group">
+		  <input class="span12" type="text" ng-model="email" placeholder="bob@example.com">
+		  <button class="btn btn-info" ng-click="postSubscriber()" type="button">Subscribe to this veteran!</button>
+		</div>
+	    </form>
+	  </div>
+	</div>
       </div>
     </div>
   </div>

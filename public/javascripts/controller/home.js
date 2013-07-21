@@ -2,7 +2,12 @@ angular.module('app').controller('homeCtrl', ['$scope', '$http', function ($scop
   'use strict';
 
   $(document).ready(function(){
-    $('.bxslider').bxSlider();
+      $('.bxslider').bxSlider({
+	  auto: true,
+	  autoControls: true,
+	  pause: 3000,
+	  slideMargin: 20
+      });
   });
   
 }]);
