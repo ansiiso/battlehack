@@ -1,47 +1,19 @@
 var async = require("async");
+var paypal_sdk = require('paypal-rest-sdk');
+var ACCOUNT_SID = 'AC241878cc4d2f8a39a03f8bf81c697a54';
+var AUTH_TOKEN = '26ea3be8414819b3ae23d2796a14ff1e';
+var twilioClient = require('twilio')(ACCOUNT_SID, AUTH_TOKEN);
+
 
 exports.recording = function(req, res) {
 
-  var ACCOUNT_SID = 'AC241878cc4d2f8a39a03f8bf81c697a54';
-  var AUTH_TOKEN = '26ea3be8414819b3ae23d2796a14ff1e';
-
-  var client = require('twilio')(ACCOUNT_SID, AUTH_TOKEN);
-
-
-/*
-  //Send an SMS text message
-  client.sendSms({
-
-      to:'+14256869787', // Any number Twilio can deliver to
-      from: '+12065696973', // A number you bought from Twilio and can use for outbound communication
-      // (206) 569-6973
-      body: 'word to your mother.' // body of the SMS message
-
-  }, function(err, responseData) { //this function is executed when a response is received from Twilio
-
-      if (!err) { // "err" is an error received during the request, if any
-
-          // "responseData" is a JavaScript object containing data received from Twilio.
-          // A sample response from sending an SMS message is here (click "JSON" to see how the data appears in JavaScript):
-          // http://www.twilio.com/docs/api/rest/sending-sms#example-1
-
-          console.log(responseData.from); // outputs "+14506667788"
-          console.log(responseData.body); // outputs "word to your mother."
-          res.json({
-            from: responseData.from,
-            body: responseData.body});
-
-      }
-  });
-*/
-
   var returnData = [];
 
-  client.recordings.list(function(err, data) {
+  twilioClient.recordings.list(function(err, data) {
 
     async.forEachSeries(data.recordings, function(recording, next) {
 
-      client.recordings(recording.sid).get(function(err, recordingData){
+      twilioClient.recordings(recording.sid).get(function(err, recordingData){
 
         returnData.push({
           create: recordingData.date_created,
@@ -55,5 +27,84 @@ exports.recording = function(req, res) {
     });
 
   });
+};
+
+exports.remove = function(req, res) {
+
+  var returnData = [];
+
+  twilioClient.recordings.list(function(err, data) {
+
+    async.forEachSeries(data.recordings, function(recording, next) {
+
+      twilioClient.recordings(recording.sid).delete(function(err, recordingData){
+        next();
+      });
+      
+    }, function(err) {
+      res.json('done');
+    });
+
+  });
 
 };
+
+exports.payments = function(req, res) {
+
+  function keyValue(obj, key, label) {
+    var returnValue = '';
+    if(obj && obj.hasOwnProperty(key))
+      returnValue = (label || key) + ': ' + obj[key];
+    return returnValue;
+  }
+
+  var resp = new require('twilio').TwimlResponse();
+
+  var voiceSetting = {
+      voice:'woman',
+      language:'en'
+  };
+
+  resp.say('Hello Soldier, Here are your recent paypal transactions.', voiceSetting);
+
+  paypal_sdk.configure({
+    'host': 'api.sandbox.paypal.com',
+    'port': '',
+    'client_id': 'EBWKjlELKMYqRNQ6sYvFo64FtaRLRR5BdHEESmha49TM',
+    'client_secret': 'EO422dn3gQLgDbuwqTjzrFgFtaRLRR5BdHEESmha49TM'
+  });
+
+  var listPayment = {
+      'count': '1',
+      'start_index': '1'
+  };
+
+  paypal_sdk.payment.list(listPayment, function (error, data) {
+    if (error) {
+        throw error;
+    } else {
+
+        data.payments.forEach(function(payment, index) {
+          resp.say('Payment number : ' + payment.id, voiceSetting);
+
+          resp.say(keyValue(payment, 'intent'), voiceSetting);
+
+          resp.say(keyValue(payment.payer, 'payment_method', 'payment method'), voiceSetting);
+
+          payment.transactions.forEach(function(transaction, index) { 
+
+            resp.say(keyValue(transaction, 'description', 'transaction description'), voiceSetting);
+            resp.say('Amount detail', voiceSetting);
+            resp.say('Total: ' + transaction.amount.total + ' ' + transaction.amount.currency, voiceSetting);
+
+          });
+
+        });
+        
+        res.setHeader('content-type', 'application/xml');
+        res.end(resp.toString());
+    }
+  });
+
+};
+
