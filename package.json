@@ -13,7 +13,8 @@
     "node-uuid": "1.4.0",
     "twilio": "1.1.4",
     "async": "0.2.9",
-    "paypal-rest-sdk": "0.6.2"
+    "paypal-rest-sdk": "0.6.2",
+    "sendgrid": "latest"
   },
   "subdomain": "onetroop",
   "domains": [
