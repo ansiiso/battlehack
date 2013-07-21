@@ -17,6 +17,10 @@ angular.module('app', [])
       controller : 'missingPageCtrl',
     })
 
+    .when('/blog', {
+      templateUrl: '/javascripts/tmpl/blog.html',
+      controller : 'blogPageCtrl',
+    })
 
     .otherwise({
       redirectTo : DEFAULT_PATH,

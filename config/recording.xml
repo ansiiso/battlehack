@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- page located at http://example.com/voicemail_record.xml -->
+<Response>
+    <Say>
+        Hello Soldier, Please leave a message at the beep.
+        The message will be uploaded to your personal site.
+        Press the star key when finished. 
+    </Say>
+    <Record
+        action="http://tag.trendalytics.co/null?access_token=JT44P6JVLNIV5UQL2ATQAAAAAAAAATSMFVIQAAAAAAAIQEYA"
+        method="POST"
+        maxLength="60"
+        finishOnKey="*"
+        />
+    <Say>I did not receive a recording</Say>
+</Response>
