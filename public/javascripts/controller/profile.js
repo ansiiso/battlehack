@@ -16,9 +16,9 @@ angular.module('app').controller('profileCtrl', ['$scope', function ($scope) {
 
     $scope.user = {
   	title: "Tell us your story",
-  	firstName: "Randy",
-  	lastName: "Stone",
-  	email: "pparker@gmail.com",
+  	firstName: "Ian",
+  	lastName: "Welch",
+  	email: "ian.welcher@gmail.com",
 	status: "Veteran",
 	gravatar: "http://www.gravatar.com/avatar/"
     };
