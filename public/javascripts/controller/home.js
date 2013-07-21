@@ -5,7 +5,7 @@ angular.module('app').controller('homeCtrl', ['$scope', '$http', function ($scop
       $('.bxslider').bxSlider({
 	  auto: true,
 	  autoControls: true,
-	  pause: 3000,
+	  pause: 7000,
 	  slideMargin: 20
       });
   });
