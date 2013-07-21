@@ -1,144 +1,54 @@
-<div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span2">
-      <section id="campaign-sidebar">
-        <section id="campaign-info">
-        <a href="/campaigns/red-bull-future-surf-camp-talent-platform" id="small-cover">
-        <img src="https://s3.amazonaws.com/assets.create.it/images/campaign/preview/507f1d4ca3e29f2c6e0001fd/GEXxhZCbsJZ3PnnwjpfTLZ1w.jpg" width="100%">
-        </a>
-        <ul id="meta">
-        <li id="campaign-mention">
-        4.14K
-        <span>
-        talking about this
-        </span>
-        </li>
-        <li id="campaign-votes">
-        124
-        <span>
-        votes
-        </span>
-        </li>
-        <li id="campaign-rating">
-        8.6
-        <span>
-        Average rating
-        </span>
-        </li>
-        </ul>
-        <a class="vote signin" id="campaign-submit">Vote now</a>
-        <ul id="share">
-        <li id="like">
-        <a class="subscribe signin like" href="#">Like</a>
-        </li>
-        <li id="fb">
-        <a href="#" id="share_to_facebook">Share on Facebook</a>
-        </li>
-        <li id="twitter">
-        <a data-lang="en" href="https://twitter.com/share" id="share_to_twitter">Tweet</a>
-        </li>
-        <li id="pinterest">
-        <a href="#" id="share_to_pin">Pin it</a>
-        </li>
-        </ul>
-        <ul id="vote-slide" style="display: none;">
-        <li>
-        <h4>Overall Impression</h4>
-        <div class="container slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" data-index="0" data-label="Overall Impression" id="slider_0" aria-disabled="false">
-        <span class="bar" data-index="0" data-label="Overall Impression" data-parent="slider_0" style="width: 0%">
-        <span class="handle">
-        <span class="number" data-index="0" data-label="Overall Impression" data-parent="slider_0">0</span>
-        </span>
-        </span>
-        <div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min" style="width: 0%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 0%;"></a></div>
-        </li>
-        <li>
-        <h4>Creativity</h4>
-        <div class="container slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" data-index="1" data-label="Creativity" id="slider_1" aria-disabled="false">
-        <span class="bar" data-index="1" data-label="Creativity" data-parent="slider_1" style="width: 0%">
-        <span class="handle">
-        <span class="number" data-index="1" data-label="Creativity" data-parent="slider_1">0</span>
-        </span>
-        </span>
-        <div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min" style="width: 0%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 0%;"></a></div>
-        </li>
-        <li>
-        <h4>Technical Skill</h4>
-        <div class="container slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" data-index="2" data-label="Technical Skill" id="slider_2" aria-disabled="false">
-        <span class="bar" data-index="2" data-label="Technical Skill" data-parent="slider_2" style="width: 0%">
-        <span class="handle">
-        <span class="number" data-index="2" data-label="Technical Skill" data-parent="slider_2">0</span>
-        </span>
-        </span>
-        <div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min" style="width: 0%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 0%;"></a></div>
-        </li>
-        </ul>
-        <br>
-        <a class="btn signin sidebar_btn icon icon-flag" href="#" style="font-size: 15px;"> Flag as inappropriate</a>
-        </section>
-        <section id="user-box">
-        <div id="fb-friends">
-        <h3></h3>
-        <ul></ul>
+<div class="splash">
+    <div class="pure-g-r">
+        <div class="pure-u-1-3">
+            <div class="l-box splash-image">
+                <img src="http://placehold.it/500x350"
+                     alt="Placeholder image for example.">
+            </div>
         </div>
-        </section>
-        <!-- close user box -->
-        </section>
-    </div>
-    <div class="span10">
 
-      <h1>My story from combats</h1>    
-      <iframe width="100%" height="500px" src="//www.youtube.com/embed/y5CldcnKKBI" frameborder="0" allowfullscreen></iframe>
+        <div class="pure-u-2-3">
+            <div class="l-box splash-text">
+                <h1 class="splash-head">
+                    Join One Troop today!
+                </h1>
 
-      <!--Body content-->
-      <h1>My voice from combats</h1>
-      <h2>voice message from +1 206-569-6973 </h2>
-      <img class="pull-right" src="//static0.twilio.com/packages/company/img/logos_icon_poweredbylarge.png" alt="Powered by twilio large version" class="powered-by-large">
+                <h2 class="splash-subhead">
+                    The HTML and CSS for this layout show how you can make a modern, responsive landing page for your next product. Browse through the source to see how we use menus and responsive grids to create this layout. Shrink your browser width and watch the layout transform and play nice with small screens.
+                </h2>
 
-      <table class="table table-striped table-bordered table-hover">
-          <thead>
-              <tr>
-                  <th>
-                      Created
-                  </th>
-                  <th>
-                      Voice message
-                  </th>
-              </tr>
-          </thead>
-          <tbody data-ng-repeat="item in recordings">
-              <tr>
-                  <td>
-                      {{item.create}}
-                  </td>
-                  <td>
-                    <audio controls>
-                      <source ng-src="{{item.voice}}" type="audio/mpeg">
-                      Your browser does not support the audio tag.
-                    </audio>
-                      
-                  </td>
-              </tr>
-          </tbody>
-      </table>
-      <hr />
-
-      <div class="row">
-        <div class="span3"><i class="icon-heart"></i><span>Thank you for you support!</span></div>
-        <div class="span6">
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-            <input type="hidden" name="cmd" value="_donations">
-            <input type="hidden" name="business" value="jian.he@live.com">
-            <input type="hidden" name="lc" value="US">
-            <input type="hidden" name="item_name" value="Help VA back to life">
-            <input type="hidden" name="no_note" value="0">
-            <input type="hidden" name="currency_code" value="USD">
-            <input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
-            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-            </form>
+                <p>
+                    <a href="#/profile" class="pure-button primary-button">Get Started</a>
+                </p>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
+<div class="pure-g-r">
+    <div class="pure-u-1-3">
+        <div class="l-box">
+            <h3>Subheading</h3>
+            <p>
+                Donec suscipit, risus vel venenatis ornare, nibh massa ultrices diam, a elementum metus felis sit amet eros. Phasellus pellentesque euismod massa sed pellentesque.
+            </p>
+        </div>
+    </div>
+
+    <div class="pure-u-1-3">
+        <div class="l-box">
+            <h3>Subheading</h3>
+            <p>
+                Donec suscipit, risus vel venenatis ornare, nibh massa ultrices diam, a elementum metus felis sit amet eros. Phasellus pellentesque euismod massa sed pellentesque.
+            </p>
+        </div>
+    </div>
+
+    <div class="pure-u-1-3">
+        <div class="l-box">
+            <h3>Subheading</h3>
+            <p>
+                Donec suscipit, risus vel venenatis ornare, nibh massa ultrices diam, a elementum metus felis sit amet eros. Phasellus pellentesque euismod massa sed pellentesque.
+            </p>
+        </div>
+    </div>
 </div>
