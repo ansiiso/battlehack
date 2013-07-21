@@ -44,11 +44,11 @@
 
                      <ul>
                         <li><a href="#/home">Home</a></li>
-                        <li><a href="#/blog">Profile</a></li>
                         <li><a href="#/profile">Signup</a></li> 
+                        <li><a href="#/blog">Profile</a></li>
                         <li><a href="#/about">About</a></li>                    
                     </ul>
-		     
+
                     <img style="height:40px;width:40px" class="pull-right" src="http://www.agilenano.com/images/soldierFace.jpg" />
                 </div>
             </div>
