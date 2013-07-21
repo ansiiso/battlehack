@@ -1,58 +1,59 @@
 <br /><br />
-<h2>Hi {{user.firstName}} {{user.lastName}}, submit your content..</h2>
+<h2>Welcome {{user.firstName}} {{user.lastName}}, please update your profile..</h2>
 
 <div>
-	<form novalidate class="pure-form pure-form-aligned simple-form">
-	    <fieldset>
-	    	<div class="pure-control-group">
-	            <label for="story">Tell us your story..</label>
-	            <textarea name="story" cols="25" rows="5" ng-model="user.message">Make it as long (or short) as you want</textarea>
-	        </div>
+  <form novalidate class="pure-form pure-form-aligned simple-form">
+    <fieldset>
+      <div class="pure-control-group">
+	<label for="name">First Name</label>
+	<input id ="name" type="text" name="name" value="{{user.firstName}}" required />
+      </div>
 
-	        <div class="pure-control-group">
-	            <label for="vlink">Paste your link</label>
-	            <input ng-model="vlink" id="vlink" type="text" placeholder="http://youtube.com/user">
-	        </div>
+      <div class="pure-control-group">
+        <label for="name">Last Name</label>
+        <input id ="name" type="text" name="name" value="{{user.lastName}}" required />
+      </div>
 
-	        <div class="pure-control-group">
-	            <label for="name">Email</label>
-	            <input id ="email" type="text" name="email" value="{{user.email}}" required />
-	        </div>
 
-	        <div class="pure-control-group">
-	            <label for="name">First Name</label>
-	            <input id ="name" type="text" name="name" value="{{user.firstName}}" required />
-	        </div>
+      <div class="pure-control-group">
+	<label for="vlink">Paste your link</label>
+	<input ng-model="vlink" id="vlink" type="text" placeholder="http://youtube.com/user">
+      </div>
 
-          <div class="pure-control-group">
-              <label for="name">Last Name</label>
-              <input id ="name" type="text" name="name" value="{{user.lastName}}" required />
-          </div>
+      <div class="pure-control-group">
+	<label for="name">Email</label>
+	<input id ="email" type="text" ng-change="updateGravitar()" ng-model="user.email" name="email" value="{{user.email}}" required />
+      </div>
 
-	        <div class="pure-control-group">
-	            <label for="status">Status</label>
-	            <select ng-model="user.status">
-				  <option>Active</option>
-				  <option>Veteran</option>
-				</select>
-	        </div>
-	        <div class="pure-control-group">
-	            <label for="town">Town</label>
-	            <input id="town" type="text" ng-model="user.town" placeholder="Brooklyn, NYC">
-	        </div>
 
-	        <div class="pure-control-group">
-	            <label for="pic">Profile Picture</label>
-	           	<p>we need some kind of file upload..</p>
-	        </div>
+      <div class="pure-control-group">
+	<label for="status">Status</label>
+	<select ng-model="user.status">
+	  <option>Active</option>
+	  <option>Veteran</option>
+	</select>
+      </div>
+      <div class="pure-control-group">
+	<label for="town">Town</label>
+	<input id="town" type="text" ng-model="user.town" placeholder="Brooklyn, NYC">
+      </div>
 
-	        <div class="pure-controls-group">
-	            <label for="cb" class="pure-checkbox">
-	                <input id="cb" type="checkbox" ng-model="user.agree" name="userAgree" required /> I've read the terms and conditions
-	            </label>
-	            <div ng-show="!user.agree">Please agree!</div>
-	            <button ng-click="submitForm()" class="pure-button pure-button-primary">Register</button>
-	        </div>
-	    </fieldset>
-	</form>
+      <div class="pure-control-group">
+	<label for="pic">Profile Picture</label>
+	<img ng-src="{{user.gravatar}}"></img>
+      </div>
+      <div class="pure-control-group">
+	<label for="story">Bio</label>
+	<textarea name="story" cols="25" rows="5" ng-model="usern.message" placeholder="Make it as long (or short) as you want"> Make it as long (or short) as you want</textarea>
+      </div>
+
+      <div class="pure-controls-group">
+	<label for="cb" class="pure-checkbox">
+	  <input id="cb" type="checkbox" ng-model="user.agree" name="userAgree" required /> I've read the terms and conditions
+	</label>
+	<div ng-show="!user.agree">Please agree!</div>
+	<button ng-click="submitForm()" class="pure-button pure-button-primary">Register</button>
+      </div>
+    </fieldset>
+  </form>
 </div>
