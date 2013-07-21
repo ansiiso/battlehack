@@ -36,14 +36,18 @@
         <div class="content">
             <div class="header">
                  <div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
-                       <a class="pure-menu-heading" href="">One Troop</a>
+                       <a class="pure-menu-heading" href=""><strong style="
+    font-family: courier;
+    font-size: 25px;
+"> One Troop </strong></a>
 
                      <ul>
                         <li><a href="#/home">Home</a></li>
-                        <li><a href="#/about">About</a></li>
                         <li><a href="#/blog">Blog</a></li>
-                        <li><a href="#/profile">Profile</a></li>
+                        <li><a href="#/profile">Profile</a></li> 
+                        <li><a href="#/about">About</a></li>                    
                     </ul>
+                    <img style="height:50px;width:50px" class="pull-right" src="http://www.agilenano.com/images/soldierFace.jpg" />
                 </div>
             </div>
         </div>

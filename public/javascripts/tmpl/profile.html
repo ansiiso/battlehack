@@ -1,8 +1,7 @@
 <br /><br />
+<h2>Hi {{user.firstName}} {{user.lastName}}, submit your content..</h2>
 
-<h2>Hi {{user.name}}, submit your content..</h2>
-
-<div ng-controller="form-controller">
+<div>
 	<form novalidate class="pure-form pure-form-aligned simple-form">
 	    <fieldset>
 	    	<div class="pure-control-group">
@@ -15,26 +14,28 @@
 	            <input ng-model="vlink" id="vlink" type="text" placeholder="http://youtube.com/user">
 	        </div>
 
-	        <p>.. or login with your youtube account to get your videos <br />Youtube plugin..</p>
-
 	        <div class="pure-control-group">
 	            <label for="name">Email</label>
-	            <input id ="email" type="text" name="email" ng-model="user.email" required />
+	            <input id ="email" type="text" name="email" value="{{user.email}}" required />
 	        </div>
 
 	        <div class="pure-control-group">
-	            <label for="name">Name</label>
-	            <input id ="name" type="text" name="name" ng-model="user.name" required />
+	            <label for="name">First Name</label>
+	            <input id ="name" type="text" name="name" value="{{user.firstName}}" required />
 	        </div>
+
+          <div class="pure-control-group">
+              <label for="name">Last Name</label>
+              <input id ="name" type="text" name="name" value="{{user.lastName}}" required />
+          </div>
 
 	        <div class="pure-control-group">
 	            <label for="status">Status</label>
-	            <select ng-model="user.stat-val">
+	            <select ng-model="user.status">
 				  <option>Active</option>
 				  <option>Veteran</option>
 				</select>
 	        </div>
-
 	        <div class="pure-control-group">
 	            <label for="town">Town</label>
 	            <input id="town" type="text" ng-model="user.town" placeholder="Brooklyn, NYC">
@@ -45,41 +46,13 @@
 	           	<p>we need some kind of file upload..</p>
 	        </div>
 
-	        <label for="charity">Now choose a charity..</label>
-	        <div class="pure-g-r">
-            	<div class="pure-u-1-3">
-            		<div class="l-box">
-            			<img class="charity" src="images/wounded.png" alt="Wounded Warriors">
-            		</div>
-            	</div>
-            	<div class="pure-u-1-3">
-            		<div class="l-box">
-            			<img class="charity" src="images/wounded.png" alt="Wounded Warriors">
-            		</div>
-            	</div>
-            	<div class="pure-u-1-3">
-            		<div class="l-box">
-            			<img class="charity" src="images/wounded.png" alt="Wounded Warriors">
-            		</div>
-            	</div>
-            </div>
-	        <select ng-model="user.charity">
-        		<option>Wounded Warriors</option>
-        		<option>Second one</option>
-        		<option>Third one</option>
-        	</select>
-
-	        <div class="pure-controls">
+	        <div class="pure-controls-group">
 	            <label for="cb" class="pure-checkbox">
 	                <input id="cb" type="checkbox" ng-model="user.agree" name="userAgree" required /> I've read the terms and conditions
 	            </label>
 	            <div ng-show="!user.agree">Please agree!</div>
-	            <button ng-click="update(user)" ng-disabled="form.$invalid" class="pure-button pure-button-primary">Register</button>
+	            <button ng-click="submitForm()" class="pure-button pure-button-primary">Register</button>
 	        </div>
 	    </fieldset>
 	</form>
-	<pre>form = {{user | json}}</pre>
-	<pre>master = {{master | json}}</pre>
-	<pre>{{title}}</pre>
-
 </div>

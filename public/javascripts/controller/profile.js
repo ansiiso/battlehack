@@ -1,13 +1,23 @@
 angular.module('app').controller('profileCtrl', ['$scope', function ($scope) {
   'use strict';
 
-  	$scope.title = "Tell us your story";
-  	$scope.user.name = "Randy";
 
-	$scope.user.email = 'pparker@gmail.com';
+  $scope.user = {
+  	title: "Tell us your story",
+  	firstName: "Randy",
+  	lastName: "Stone",
+  	email: "pparker@gmail.com",
+		status: "Veteran",
+  };
+
+
+
 	$scope.submitForm = function () {
+			console.log($scope.user);
 	    console.info("Here I should implement the logic to send a request to the server.");
 	}
+
+	/*
 
 	function form-controller($scope) {
 		$scope.master = {};
@@ -22,4 +32,6 @@ angular.module('app').controller('profileCtrl', ['$scope', function ($scope) {
 
 		$scope.reset();
 	}
+
+	*/
 }]);
