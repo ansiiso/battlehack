@@ -34,6 +34,10 @@ angular.module('app', [])
       controller : 'blogPageCtrl',
     })
 
+    .when('/about', {
+      templateUrl: '/javascripts/tmpl/about.html',
+      controller : 'aboutPageCtrl',
+    })
 
     .otherwise({
       redirectTo : DEFAULT_PATH,

@@ -1,58 +1,193 @@
-<br /><br />
-<h2>Hi {{user.firstName}} {{user.lastName}}, submit your content..</h2>
+<style>
+    ::-moz-selection {
+        background: #b3d4fc;
+        text-shadow: none;
+    }
 
+    ::selection {
+        background: #b3d4fc;
+        text-shadow: none;
+    }
+
+    html {
+        padding: 30px 10px;
+        font-size: 20px;
+        line-height: 1.4;
+        color: #737373;
+        background: #f0f0f0;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+    }
+
+    html,
+    input {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    body {
+        max-width: 1000px;
+        _width: 500px;
+        padding: 30px 20px 50px;
+        border: 1px solid #b3b3b3;
+        border-radius: 4px;
+        margin: 0 auto;
+        box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;
+        background: #fcfcfc;
+    }
+
+    h1 {
+        margin: 0 10px;
+        font-size: 50px;
+        text-align: center;
+    }
+
+    h1 span {
+        color: #bbb;
+    }
+
+    h3 {
+        margin: 1.5em 0 0.5em;
+    }
+
+    p {
+        margin: 1em 0;
+    }
+
+    ul {
+        padding: 0 0 0 40px;
+        margin: 1em 0;
+    }
+
+    .container {
+        max-width: 380px;
+        _width: 380px;
+        margin: 0 auto;
+    }
+
+    /* google search */
+
+    #goog-fixurl ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #goog-fixurl form {
+        margin: 0;
+    }
+
+    #goog-wm-qt,
+    #goog-wm-sb {
+        border: 1px solid #bbb;
+        font-size: 16px;
+        line-height: normal;
+        vertical-align: top;
+        color: #444;
+        border-radius: 2px;
+    }
+
+    #goog-wm-qt {
+        width: 220px;
+        height: 20px;
+        padding: 5px;
+        margin: 5px 10px 0 0;
+        box-shadow: inset 0 1px 1px #ccc;
+    }
+
+    #goog-wm-sb {
+        display: inline-block;
+        height: 32px;
+        padding: 0 10px;
+        margin: 5px 0 0;
+        white-space: nowrap;
+        cursor: pointer;
+        background-color: #f5f5f5;
+        background-image: -webkit-linear-gradient(rgba(255,255,255,0), #f1f1f1);
+        background-image: -moz-linear-gradient(rgba(255,255,255,0), #f1f1f1);
+        background-image: -ms-linear-gradient(rgba(255,255,255,0), #f1f1f1);
+        background-image: -o-linear-gradient(rgba(255,255,255,0), #f1f1f1);
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        *overflow: visible;
+        *display: inline;
+        *zoom: 1;
+    }
+
+    #goog-wm-sb:hover,
+    #goog-wm-sb:focus {
+        border-color: #aaa;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+        background-color: #f8f8f8;
+    }
+
+    #goog-wm-qt:hover,
+    #goog-wm-qt:focus {
+        border-color: #105cb6;
+        outline: 0;
+        color: #222;
+    }
+
+    input::-moz-focus-inner {
+        padding: 0;
+        border: 0;
+    }
+</style>
+
+<div class="container">
 <div>
-	<form novalidate class="pure-form pure-form-aligned simple-form">
+	<form novalidate class="form-horizontal">
 	    <fieldset>
-	    	<div class="pure-control-group">
+	    	<div class="control-group">
 	            <label for="story">Tell us your story..</label>
 	            <textarea name="story" cols="25" rows="5" ng-model="user.message">Make it as long (or short) as you want</textarea>
 	        </div>
 
-	        <div class="pure-control-group">
+	        <div class="control-group">
 	            <label for="vlink">Paste your link</label>
 	            <input ng-model="vlink" id="vlink" type="text" placeholder="http://youtube.com/user">
 	        </div>
 
-	        <div class="pure-control-group">
+	        <div class="control-group">
 	            <label for="name">Email</label>
 	            <input id ="email" type="text" name="email" value="{{user.email}}" required />
 	        </div>
 
-	        <div class="pure-control-group">
+	        <div class="control-group">
 	            <label for="name">First Name</label>
 	            <input id ="name" type="text" name="name" value="{{user.firstName}}" required />
 	        </div>
 
-          <div class="pure-control-group">
+          <div class="control-group">
               <label for="name">Last Name</label>
               <input id ="name" type="text" name="name" value="{{user.lastName}}" required />
           </div>
 
-	        <div class="pure-control-group">
+	        <div class="control-group">
 	            <label for="status">Status</label>
 	            <select ng-model="user.status">
 				  <option>Active</option>
 				  <option>Veteran</option>
 				</select>
 	        </div>
-	        <div class="pure-control-group">
+	        <div class="ontrol-group">
 	            <label for="town">Town</label>
 	            <input id="town" type="text" ng-model="user.town" placeholder="Brooklyn, NYC">
 	        </div>
 
-	        <div class="pure-control-group">
+	        <div class="control-group">
 	            <label for="pic">Profile Picture</label>
 	           	<p>we need some kind of file upload..</p>
 	        </div>
 
-	        <div class="pure-controls-group">
+	        <div class="controls-group">
 	            <label for="cb" class="pure-checkbox">
 	                <input id="cb" type="checkbox" ng-model="user.agree" name="userAgree" required /> I've read the terms and conditions
 	            </label>
 	            <div ng-show="!user.agree">Please agree!</div>
-	            <button ng-click="submitForm()" class="pure-button pure-button-primary">Register</button>
+	            <button ng-click="submitForm()" class="pure-button pure-button-primary">Update</button>
 	        </div>
 	    </fieldset>
 	</form>
+</div>
 </div>
