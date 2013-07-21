@@ -20,7 +20,14 @@ angular.module('app', [])
     }).when('/404', {
       templateUrl: '/javascripts/tmpl/404.html',
       controller : 'missingPageCtrl',
+    }).when('/', {
+      templateUrl: '/javascripts/tmpl/home.html',
+      controller : 'homeCtrl',
+    }).when('/profile', {
+      templateUrl: '/javascripts/tmpl/profile.html',
+      controller : 'profileCtrl',
     })
+
 
 
     .otherwise({

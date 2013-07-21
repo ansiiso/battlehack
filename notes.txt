@@ -1,0 +1,11 @@
+username: shashi77@gmail.com
+password: shashi17
+
+tasks
+
+charity images
+web form
+generate output for api wrapper
+angularjs input validation
+
+how to upload images in angular..
